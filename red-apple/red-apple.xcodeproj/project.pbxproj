@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A0006AA11BD33E8400500ED6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0006AA01BD33E8400500ED6 /* main.cpp */; };
+		A0006AAC1BD3599300500ED6 /* QueryParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0006AAA1BD3599300500ED6 /* QueryParser.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,9 @@
 		A0006A9D1BD33E8400500ED6 /* red-apple */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "red-apple"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0006AA01BD33E8400500ED6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A0006AA71BD3411A00500ED6 /* mainHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mainHeader.h; sourceTree = "<group>"; };
+		A0006AA91BD3498300500ED6 /* easylogging++.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "easylogging++.h"; path = "libs/easylogging++.h"; sourceTree = "<group>"; };
+		A0006AAA1BD3599300500ED6 /* QueryParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueryParser.cpp; sourceTree = "<group>"; };
+		A0006AAB1BD3599300500ED6 /* QueryParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QueryParser.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,7 @@
 		A0006A941BD33E8400500ED6 = {
 			isa = PBXGroup;
 			children = (
+				A0006AA81BD3494200500ED6 /* libs */,
 				A0006A9F1BD33E8400500ED6 /* red-apple */,
 				A0006A9E1BD33E8400500ED6 /* Products */,
 			);
@@ -60,8 +65,18 @@
 			children = (
 				A0006AA01BD33E8400500ED6 /* main.cpp */,
 				A0006AA71BD3411A00500ED6 /* mainHeader.h */,
+				A0006AAA1BD3599300500ED6 /* QueryParser.cpp */,
+				A0006AAB1BD3599300500ED6 /* QueryParser.hpp */,
 			);
 			path = "red-apple";
+			sourceTree = "<group>";
+		};
+		A0006AA81BD3494200500ED6 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				A0006AA91BD3498300500ED6 /* easylogging++.h */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0006AA11BD33E8400500ED6 /* main.cpp in Sources */,
+				A0006AAC1BD3599300500ED6 /* QueryParser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

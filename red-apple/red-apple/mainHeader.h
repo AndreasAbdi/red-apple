@@ -9,10 +9,9 @@
 #ifndef mainHeader_h
 #define mainHeader_h
 
-#ifndef iostream_h
-#define iostream_h
 #include <iostream>
-#endif
+#include <fstream>
+#include "easylogging++.h"
 
 
 #endif /* mainHeader_h */

@@ -6,7 +6,8 @@
 //  Copyright © 2015 aabdi. All rights reserved.
 //
 
-#include <iostream>
+#include "mainHeader.h"
+INITIALIZE_EASYLOGGINGPP
 
 /*
  In theory what this should do:
@@ -16,23 +17,62 @@
  4. Try to give the user whatever it is that they wanted.
  5. Restart loop.
  */
-int main(int argc, const char * argv[]) {
-    // It might be nice to practice some multithreading again.
+
+void setupLogs() {
+    //Set up the logs
+    // Load configuration from file
+    el::Configurations conf("/");
+    // Reconfigure single logger
+    el::Loggers::reconfigureLogger("default", conf);
+    // Actually reconfigure all loggers instead
+    el::Loggers::reconfigureAllLoggers(conf);
+    // Now all the loggers will use configuration from file
+}
+
+void start() {
+    //TODO: Do start up here.
+}
+
+//This gets the user input.
+std::string getUserQuery() {
+    //TODO:Get the user query here.
+    return NULL;
+}
+
+//This parses the query
+bool parseQuery(std::string query) {
+    //TODO: Parse the query here
+    bool queryParsed = false;
+    return queryParsed;
+}
+
+void mainLoop() {
+    // TODO: It might be nice to practice some multithreading again.
+    //============VARIABLE DECLARATION=============
     bool doMainLoop = true;
-    int i = 1;
-
-
-    std::cout << "Welcome to the Red Apple!!\n How can we feed you today? \n";
+    bool terminateCondition = false;
+    std::string query = NULL;
+    
+    //
+    LOG(INFO) << "First LOG element in boot of Red Apple.";
+    std::cout << "Welcome to the Red Apple!!\nHow can we feed you today? \n";
     
     // 1. Start a mainLoop.
     while(doMainLoop){
-        std::cout << "I'm doing the main loop." + std::to_string(i) + "\n";
-        i++;
-        if( i >= 5){
+        start();
+        query = getUserQuery();
+        terminateCondition = parseQuery(query);
+        if(terminateCondition){
             doMainLoop = false;
         }
     }
     // 2. Wait for a the user to start giving it information to process.
     std::cout << "Exiting main loop here.\n";
+   
+}
+
+
+int main(int argc, const char * argv[]) {
+    mainLoop();
     return 0;
 }
